@@ -1,0 +1,9 @@
+concept,name,concept_type
+name,Name,string
+year,Year,string
+country,Country,entity_domain
+mmr,MMR,measure
+live_births,Live Births,measure
+maternal_deaths,Maternal deaths,measure
+women_reproductive_age_15_49,Women reproductive age (15-49),measure
+mm_rate,MM-rate,measure
