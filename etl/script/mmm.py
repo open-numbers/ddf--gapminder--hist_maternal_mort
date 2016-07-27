@@ -11,6 +11,32 @@ source = '../source/gapdata010.xls'
 out_dir = '../../'
 
 
+def fix_time_range(s):
+    """change a time range to the middle of year in the range.
+    e.g. fix_time_range('1980-90') = 1985
+    """
+
+    if '-' not in s:
+        return int(s)
+
+    else:
+        t1, t2 = s.split('-')
+        if len(t1) == 4 and len(t2) == 4:
+            span = int(t2) - int(t1)
+            return int(int(t1) + span / 2)
+        else:  # t2 have only 2 digits.
+            y1 = int(t1)
+            hund1 = int(t1[:2])
+            tens1 = int(t1[2:])
+            tens2 = int(t2)
+            if tens1 > tens2:
+                hund2 = hund1 + 1
+                y2 = hund2 * 100 + tens2
+            else:
+                y2 = hund1 * 100 + tens2
+
+            return int(y1 + (y2 - y1) / 2 )
+
 if __name__ == '__main__':
     data = pd.read_excel(source, na_values=['..', '...', 'no data'])
     data = data.set_index('Country')
@@ -48,6 +74,10 @@ if __name__ == '__main__':
     dps = data[dps_cols].copy()
     dps.columns = list(map(to_concept_id, dps.columns))
     dps['country'] = dps['country'].map(to_concept_id)
+
+    # fix the year range problem
+    dps['year'] = dps['year'].map(lambda x: fix_time_range(str(x)))
+
     dps = dps.set_index(['country', 'year'])
 
     for i, df in dps.items():
