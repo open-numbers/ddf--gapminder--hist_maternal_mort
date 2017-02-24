@@ -1,9 +1,0 @@
-key,value,file
-concept,name,ddf--concepts.csv
-concept,concept_type,ddf--concepts.csv
-"country,year",live_births,ddf--datapoints--live_births--by--country--year.csv
-"country,year",maternal_deaths,ddf--datapoints--maternal_deaths--by--country--year.csv
-"country,year",mm_rate,ddf--datapoints--mm_rate--by--country--year.csv
-"country,year",mmr,ddf--datapoints--mmr--by--country--year.csv
-"country,year",women_reproductive_age_15_49,ddf--datapoints--women_reproductive_age_15_49--by--country--year.csv
-country,name,ddf--entities--country.csv

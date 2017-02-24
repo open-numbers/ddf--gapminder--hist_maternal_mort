@@ -1,0 +1,146 @@
+{
+    "name": "ddf--gapminder--hist_maternal_mort",
+    "language": {
+        "id": "en"
+    },
+    "resources": [
+        {
+            "path": "ddf--concepts.csv",
+            "name": "ddf--concepts",
+            "schema": {
+                "primaryKey": "concept",
+                "fields": [
+                    {
+                        "name": "concept"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "concept_type"
+                    }
+                ]
+            }
+        },
+        {
+            "path": "ddf--datapoints--live_births--by--country--year.csv",
+            "name": "ddf--datapoints--live_births--by--country--year",
+            "schema": {
+                "primaryKey": [
+                    "country",
+                    "year"
+                ],
+                "fields": [
+                    {
+                        "name": "country"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "live_births"
+                    }
+                ]
+            }
+        },
+        {
+            "path": "ddf--datapoints--maternal_deaths--by--country--year.csv",
+            "name": "ddf--datapoints--maternal_deaths--by--country--year",
+            "schema": {
+                "primaryKey": [
+                    "country",
+                    "year"
+                ],
+                "fields": [
+                    {
+                        "name": "country"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "maternal_deaths"
+                    }
+                ]
+            }
+        },
+        {
+            "path": "ddf--datapoints--mm_rate--by--country--year.csv",
+            "name": "ddf--datapoints--mm_rate--by--country--year",
+            "schema": {
+                "primaryKey": [
+                    "country",
+                    "year"
+                ],
+                "fields": [
+                    {
+                        "name": "country"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "mm_rate"
+                    }
+                ]
+            }
+        },
+        {
+            "path": "ddf--datapoints--mmr--by--country--year.csv",
+            "name": "ddf--datapoints--mmr--by--country--year",
+            "schema": {
+                "primaryKey": [
+                    "country",
+                    "year"
+                ],
+                "fields": [
+                    {
+                        "name": "country"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "mmr"
+                    }
+                ]
+            }
+        },
+        {
+            "path": "ddf--datapoints--women_reproductive_age_15_49--by--country--year.csv",
+            "name": "ddf--datapoints--women_reproductive_age_15_49--by--country--year",
+            "schema": {
+                "primaryKey": [
+                    "country",
+                    "year"
+                ],
+                "fields": [
+                    {
+                        "name": "country"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "women_reproductive_age_15_49"
+                    }
+                ]
+            }
+        },
+        {
+            "path": "ddf--entities--country.csv",
+            "name": "ddf--entities--country",
+            "schema": {
+                "primaryKey": "country",
+                "fields": [
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "country"
+                    }
+                ]
+            }
+        }
+    ]
+}
